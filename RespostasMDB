@@ -1,0 +1,134 @@
+[
+  {
+    $match: {
+      "Bairro_Partida": "Floresta"
+    }
+  },
+  {
+    $lookup: {
+      from: "Usa",
+      localField: "Id",
+      foreignField: "fk_Viagem_Id",
+      as: "usas"
+    }
+  },
+  {
+    $lookup: {
+      from: "Carro",
+      localField: "usas.fk_Motorista_Id",
+      foreignField: "Id_Motorista",
+      as: "carros"
+    }
+  },
+  {
+    $unwind: "$carros"
+  },
+  {
+$project: {
+      Codigo: "$carros.Codigo",
+      _id: 0
+    }
+  }
+]
+
+
+
+[ 
+  {
+    $lookup: {
+      from: "Usa",
+      localField: "CPF",
+      foreignField: "fk_Passageiro_CPF",
+      as: "usas"
+    }
+  },
+ {
+    $lookup: {
+      from: "Viagem",
+      localField: "usas.fk_Viagem_Id",
+      foreignField: "Id",
+      as: "viagens"
+    }
+  },
+ {
+    $lookup: {
+      from: "Carro",
+      localField: "usas.fk_Motorista_Id",
+      foreignField: "Id_Motorista",
+      as: "carros"
+    }
+  },
+  {
+    $unwind: "$viagens"
+  },
+  {
+  $match: {
+    $expr: {
+      $eq: [
+        "$Bairro" ,
+        "$viagens.Bairro_Partida"
+      ]
+    }
+  }
+},
+{
+  $unwind: "$carros"
+},
+{
+$project: {
+      Nome: "$Nome" ,
+      Codigo: "$carros.Codigo",
+      _id: 0
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+      $lookup: {
+      from: "Usa",
+      localField: "CPF",
+      foreignField: "fk_Passageiro_CPF",
+      as: "usas",
+    },
+  },
+  {
+    $lookup: {
+      from: "Viagem",
+      localField: "usas.fk_Viagem_Id",
+      foreignField: "Id",
+      as: "viagens",
+    },
+  },
+  {
+    $unwind: "$viagens",
+  },
+  {
+    $group: {
+      _id: {
+        CPF: "$CPF",
+        Nome: "$Nome",
+      },
+      Total_Quilometros: { $sum: "$viagens.Kms" },
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      CPF: "$_id.CPF",
+      Nome: "$_id.Nome",
+      Total_Quilometros: 1,
+    },
+  },
+  {
+    $sort: {
+      Nome: 1,
+    },
+  },
+]
+
+
