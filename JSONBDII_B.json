@@ -1,0 +1,203 @@
+{
+	"Carros": [
+		{
+			"Id_Motorista": 1,
+			"Codigo": "1D.FMA1D93",
+			"Placa": "FMA1D93",
+			"Marca": "Toyota",
+			"Ano": 2018,
+			"Nome_Motorista": "Carolinne S"
+		},
+		{
+			"Id_Motorista": 2,
+			"Codigo": "2B.GHK3T08",
+			"Placa": "GHK3T08",
+			"Marca": "Honda",
+			"Ano": 2019,
+			"Nome_Motorista": "Luccas C"
+		},
+		{
+			"Id_Motorista": 3,
+			"Codigo": "3F.BMD2S27",
+			"Placa": "BMD2S27",
+			"Marca": "Ford",
+			"Ano": 2017,
+			"Nome_Motorista": "Mariana R"
+		}
+	],
+	"Passageiros": [
+		{
+			"CPF": "123.456.789-01",
+			"Nome": "Pietra S.",
+			"Email": "pietrass@gmail.com",
+			"Telefone": "(51)97798-4590",
+			"Bairro": "Tristeza",
+			"Meio_Pagamento": "Cartão de Crédito"
+		},
+		{
+			"CPF": "234.567.890-12",
+			"Nome": "Paulo M.",
+			"Email": "paulom024@gmail.com",
+			"Telefone": "(51)97385-3329",
+			"Bairro": "Hípica",
+			"Meio_Pagamento": "Dinheiro"
+		},
+		{
+			"CPF": "345.678.901-23",
+			"Nome": "Martha C.",
+			"Email": "mccarvalho@yahoo.com.br",
+			"Telefone": "(51)91178-2899",
+			"Bairro": "Teresópolis",
+			"Meio_Pagamento": "Cartão de Débito"
+		},
+		{
+			"CPF": "456.789.012-34",
+			"Nome": "Bianca L.",
+			"Email": "bianca0225@gmail.com",
+			"Telefone": "(51)95640-2893",
+			"Bairro": "Ipanema",
+			"Meio_Pagamento": "Cartão de Crédito"
+		},
+		{
+			"CPF": "567.890.123-45",
+			"Nome": "Felipe B.",
+			"Email": "felipegbraga@gmail.com",
+			"Telefone": "(51)92863-3443",
+			"Bairro": "Moinhos de Vento",
+			"Meio_Pagamento": "Dinheiro"
+		}
+	],
+	"Viagens": [
+		{
+			"Id": 1,
+			"Kms": 7,
+			"Valor": 10.5,
+			"Bairro_Partida": "Floresta",
+			"Bairro_Destino": "Menino Deus",
+			"Viagem_TIPO": 1
+		},
+		{
+			"Id": 2,
+			"Kms": 200,
+			"Valor": 270,
+			"Cidade_Partida": "Torres",
+			"Cidade_Destino": "Porto Alegre",
+			"Taxa_Adicional": 12.5,
+			"Viagem_TIPO": 2
+		},
+		{
+			"Id": 3,
+			"Kms": 120,
+			"Valor": 110,
+			"Cidade_Partida": "Porto Alegre",
+			"Cidade_Destino": "Gramado",
+			"Taxa_Adicional": 9.5,
+			"Viagem_TIPO": 2
+		},
+		{
+			"Id": 4,
+			"Kms": 17,
+			"Valor": 25.5,
+			"Bairro_Partida": "Ipanema",
+			"Bairro_Destino": "Floresta",
+			"Viagem_TIPO": 1
+		},
+		{
+			"Id": 5,
+			"Kms": 10,
+			"Valor": 10.5,
+			"Bairro_Partida": "Teresópolis",
+			"Bairro_Destino": "Moinhos de vento",
+			"Viagem_TIPO": 1
+		},
+		{
+			"Id": 6,
+			"Kms": 16,
+			"Valor": 24,
+			"Bairro_Partida": "Tristeza",
+			"Bairro_Destino": "Passos de areia",
+			"Viagem_TIPO": 1
+		},
+		{
+			"Id": 7,
+			"Kms": 130,
+			"Valor": 135,
+			"Cidade_Partida": "Porto Alegre",
+			"Cidade_Destino": "Caxias do sul",
+			"Taxa_Adicional": 9.7,
+			"Viagem_TIPO": 2
+		},
+		{
+			"Id": 8,
+			"Kms": 20,
+			"Valor": 30,
+			"Bairro_Partida": "Floresta",
+			"Bairro_Destino": "Centro Histórico",
+			"Viagem_TIPO": 1
+		},
+		{
+			"Id": 9,
+			"Kms": 25,
+			"Valor": 27.5,
+			"Cidade_Partida": "Canoas",
+			"Cidade_Destino": "Porto Alegre",
+			"Taxa_Adicional": 2.4,
+			"Viagem_TIPO": 2
+		},
+		{
+			"Id": 10,
+			"Kms": 15,
+			"Valor": 22.5,
+			"Bairro_Partida": "Cidade baixa",
+			"Bairro_Destino": "Hípica",
+			"Viagem_TIPO": 1
+		}
+	],
+	"Usas": [
+		{
+			"fk_Passageiro_CPF": "123.456.789-01",
+			"fk_Viagem_Id": 1,
+			"fk_Motorista_Id": 1
+		},
+		{
+			"fk_Passageiro_CPF": "234.567.890-12",
+			"fk_Viagem_Id": 2,
+			"fk_Motorista_Id": 2
+		},
+		{
+			"fk_Passageiro_CPF": "345.678.901-23",
+			"fk_Viagem_Id": 3,
+			"fk_Motorista_Id": 3
+		},
+		{
+			"fk_Passageiro_CPF": "456.789.012-34",
+			"fk_Viagem_Id": 4,
+			"fk_Motorista_Id": 1
+		},
+		{
+			"fk_Passageiro_CPF": "567.890.123-45",
+			"fk_Viagem_Id": 5,
+			"fk_Motorista_Id": 2
+		},
+		{
+			"fk_Passageiro_CPF": "123.456.789-01",
+			"fk_Viagem_Id": 6,
+			"fk_Motorista_Id": 3
+		},
+		{
+			"fk_Passageiro_CPF": "234.567.890-12",
+			"fk_Viagem_Id": 7,
+			"fk_Motorista_Id": 2
+		},
+		{
+			"fk_Passageiro_CPF": "345.678.901-23",
+			"fk_Viagem_Id": 8,
+			"fk_Motorista_Id": 3
+		},
+		{
+			"fk_Passageiro_CPF": "456.789.012-34",
+			"fk_Viagem_Id": 9,
+			"fk_Motorista_Id": 1
+		}
+	]
+}
